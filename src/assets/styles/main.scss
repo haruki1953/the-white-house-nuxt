@@ -1,7 +1,7 @@
 @use './base.css';
 @use './transition.scss';
 @use './animation.scss';
-@use './control.scss';
+@use './whitehouse.scss';
 
 @use "sass:color";
 
@@ -13,6 +13,7 @@
   @return color.mix(#1b1b1f, $color, $step * 10%);
 }
 
+// element-plus 样式
 $types: (
   primary: #7899CC,
   success: #799978,

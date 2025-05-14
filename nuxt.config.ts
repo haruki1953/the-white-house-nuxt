@@ -12,16 +12,16 @@ export default defineNuxtConfig({
     /** Options */
   },
   srcDir: 'src/',
-  components: [
-    {
-      path: '~/components',
-      pathPrefix: false // 取消自动前缀，避免名称冲突
-    }
-  ],
+  // components: [
+  //   {
+  //     path: '~/components',
+  //     pathPrefix: false // 取消自动前缀，避免名称冲突
+  //   }
+  // ],
   app: {
     // head
     head: {
-      title: 'Tweblog',
+      title: 'The White House',
       meta: [
         {
           name: 'viewport',
