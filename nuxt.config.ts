@@ -33,37 +33,68 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon256.png' },
+        // { rel: 'icon', type: 'image/png', href: '/favicon256.png' },
         {
-          rel: 'stylesheet',
-          href: '/fontawesome-free-6.7.1-web/css/fontawesome.min.css'
+          rel: 'icon',
+          type: 'image/png',
+          href: '/images-250515/favicon-196x196.png'
         },
         {
-          rel: 'stylesheet',
-          href: '/fontawesome-free-6.7.1-web/css/brands.min.css'
+          rel: 'icon',
+          type: 'image/png',
+          href: '/images-250515/favicon-96x96.png'
         },
         {
-          rel: 'stylesheet',
-          href: '/fontawesome-free-6.7.1-web/css/solid.min.css'
+          rel: 'icon',
+          type: 'image/png',
+          href: '/images-250515/favicon-32x32.png'
         },
         {
-          rel: 'stylesheet',
-          href: '/fontawesome-free-6.7.1-web/css/regular.min.css'
-        }
-      ],
-      script: [
+          rel: 'icon',
+          type: 'image/png',
+          href: '/images-250515/favicon-16x16.png'
+        },
         {
-          innerHTML: `
-    /* 在 index.html 中就初始化颜色，以避免加载过程中的白屏 */
-    // 读取本地存储中的 vueuse-color-scheme 值
-    const scheme = localStorage.getItem('vueuse-color-scheme') || 'auto';
-    // 根据 vueuse-color-scheme 的值设置主题
-    if (scheme === 'dark' || (scheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-          `
+          rel: 'icon',
+          type: 'image/png',
+          href: '/images-250515/favicon-128.png'
+        },
+        { rel: 'icon', type: 'image/png', href: '/images-250515/favicon.ico' },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '/fontawesome-free-6.7.1-web/css/fontawesome.min.css'
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '/fontawesome-free-6.7.1-web/css/brands.min.css'
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '/fontawesome-free-6.7.1-web/css/solid.min.css'
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '/fontawesome-free-6.7.1-web/css/regular.min.css'
+        // },
+        // src\public\whitehouse-fonts-250515\css\all.css
+        {
+          rel: 'stylesheet',
+          href: '/whitehouse-fonts-250515/css/all.css'
         }
       ]
+      //   script: [
+      //     {
+      //       innerHTML: `
+      // /* 在 index.html 中就初始化颜色，以避免加载过程中的白屏 */
+      // // 读取本地存储中的 vueuse-color-scheme 值
+      // const scheme = localStorage.getItem('vueuse-color-scheme') || 'auto';
+      // // 根据 vueuse-color-scheme 的值设置主题
+      // if (scheme === 'dark' || (scheme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      //   document.documentElement.classList.add('dark');
+      // }
+      //       `
+      //     }
+      //   ]
     }
   },
 

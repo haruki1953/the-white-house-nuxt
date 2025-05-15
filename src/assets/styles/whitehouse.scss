@@ -13,6 +13,53 @@
   --wh-header--variation--logo--offset: var(--wp--preset--spacing--12);
 }
 
+@media screen and (min-width: 440px) {
+  :root {
+    --wh-header--wordmark--font-size: clamp(2rem, 0.6vw + 1.835rem, 2.375rem);
+    --wh-header--wordmark--prefix--font-size: clamp(1.125rem, 0.3vw + 1.0425rem, 1.3125rem);
+    --wh-header--logo--height: 2.0625rem;
+  }
+}
+
+@media screen and (max-width: 439px) {
+  :root {
+    --wh-header--wordmark--font-size: clamp(1.4545rem, 7.27vw + 0rem, 2rem);
+    --wh-header--wordmark--prefix--font-size: clamp(0.8182rem, 4.09vw + 0rem, 1.125rem);
+    --wh-header--logo--height: clamp(1.5rem, 7.5vw + 0rem, 2.0625rem);
+  }
+}
+
+/* ==============================
+   ## Style
+   ============================== */
+.button-icon {
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: 0 0;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+a {
+  transition: allow-discrete 0.125s ease-in-out 0s;
+
+  &:where(:not(.wp-element-button)) {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
 /* ==============================
    ## WordPress
    ============================== */
@@ -50,7 +97,7 @@ body {
 }
 
 :root {
-  --wp--style--global--full-size: min(100%,1920px);
+  --wp--style--global--full-size: min(100%, 1920px);
 }
 
 :root {

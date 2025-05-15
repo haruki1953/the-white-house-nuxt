@@ -1,0 +1,6 @@
+curl -O https://www.whitehouse.gov/wp-content/images/favicon-196x196.png
+curl -O https://www.whitehouse.gov/wp-content/images/favicon-96x96.png
+curl -O https://www.whitehouse.gov/wp-content/images/favicon-32x32.png
+curl -O https://www.whitehouse.gov/wp-content/images/favicon-16x16.png
+curl -O https://www.whitehouse.gov/wp-content/images/favicon-128.png
+curl -O https://www.whitehouse.gov/wp-content/images/favicon.ico

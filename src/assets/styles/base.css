@@ -95,13 +95,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-* {
-  /* 窄滚动条 */
+/* 窄滚动条 */
+/* 滑块颜色 + 轨道透明 */
+/* * {
   scrollbar-width: thin;
-  /* 滑块颜色 + 轨道透明 */
   scrollbar-color: var(--my-neutral) transparent;
-}
+} */
 
 /* 
  * 下面这些在web版兼容性不好，会影响移动端的滚动条宽度计算，只在electron用算了 

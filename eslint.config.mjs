@@ -75,6 +75,7 @@ export default withNuxt([
       'vue/no-v-html': 'off',
       // 组件参数不用连字符命名，用小驼峰命名
       'vue/attribute-hyphenation': ['warn', 'never'],
+      'vue/html-self-closing': 'off',
 
       '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_' }]
     }
