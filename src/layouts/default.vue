@@ -3,6 +3,11 @@ import { whitehouseLogo } from '~/config'
 import IconMenuToggleClose from './_partials/IconMenuToggleClose.vue'
 import IconMenuToggleOpen from './_partials/IconMenuToggleOpen.vue'
 import IconSearchIcon from './_partials/IconSearchIcon.vue'
+
+const targetMenuToggleButtonRef = ref(null)
+const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
+  targetMenuToggleButtonRef
+)
 </script>
 
 <template>
@@ -13,13 +18,17 @@ import IconSearchIcon from './_partials/IconSearchIcon.vue'
           <div class="wp-block-whitehouse-header__content">
             <div class="wp-block-whitehouse-header__p1">
               <div class="wp-block-whitehouse-header__menu-toggle">
-                <div
+                <button
+                  ref="targetMenuToggleButtonRef"
                   class="button-icon wp-block-whitehouse-header__menu-toggle--button"
                 >
-                  <IconMenuToggleOpen v-show="true"></IconMenuToggleOpen>
+                  <IconMenuToggleOpen
+                    v-show="true"
+                    :isHover="!targetMenuToggleButtonIsOutside"
+                  ></IconMenuToggleOpen>
                   <IconMenuToggleClose v-show="false"></IconMenuToggleClose>
                   <span>Menu</span>
-                </div>
+                </button>
               </div>
               <div class="wp-block-whitehouse-header__administration">
                 <span>President Donald J. Trump</span>

@@ -60,6 +60,77 @@ export default defineNuxtConfig({
           href: '/images-250515/favicon-128.png'
         },
         { rel: 'icon', type: 'image/png', href: '/images-250515/favicon.ico' },
+        // 预加载字体
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-Regular.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-Italic.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-Medium.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-MediumItalic.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-SemiBold.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-SemiBoldItalic.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-Bold.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSans-BoldItalic.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSerif-Regular.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'preload',
+          href: '/whitehouse-fonts-250515/webfonts/InstrumentSerif-Italic.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: 'anonymous'
+        },
         // {
         //   rel: 'stylesheet',
         //   href: '/fontawesome-free-6.7.1-web/css/fontawesome.min.css'
