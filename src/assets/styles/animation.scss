@@ -17,3 +17,13 @@
     opacity: 0;
   }
 }
+
+@keyframes popover-action-label-animation {
+  0% {
+      opacity: 0
+  }
+
+  to {
+      opacity: 1
+  }
+}

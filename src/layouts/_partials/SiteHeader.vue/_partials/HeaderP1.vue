@@ -6,6 +6,24 @@ const targetMenuToggleButtonRef = ref(null)
 const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
   targetMenuToggleButtonRef
 )
+
+const popoverStore = usePopoverStore()
+const toggleMenu = () => {
+  if (popoverStore.popoverState === 'menu') {
+    popoverStore.setPopoverClose()
+  } else if (popoverStore.popoverState === 'close') {
+    popoverStore.setPopoverMenu()
+  } else if (popoverStore.popoverState === 'search') {
+    popoverStore.setPopoverMenu()
+  }
+}
+
+const buttonLable = computed(() => {
+  if (popoverStore.popoverState === 'menu') {
+    return 'Close'
+  }
+  return 'Menu'
+})
 </script>
 
 <template>
@@ -14,13 +32,16 @@ const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
       <button
         ref="targetMenuToggleButtonRef"
         class="button-icon wp-block-whitehouse-header__menu-toggle--button"
+        @click="toggleMenu"
       >
         <IconMenuToggleOpen
-          v-show="true"
+          class="wp-block-whitehouse-header__menu-toggle--open"
           :isHover="!targetMenuToggleButtonIsOutside"
         ></IconMenuToggleOpen>
-        <IconMenuToggleClose v-show="false"></IconMenuToggleClose>
-        <span>Menu</span>
+        <IconMenuToggleClose
+          class="wp-block-whitehouse-header__menu-toggle--close"
+        ></IconMenuToggleClose>
+        <span>{{ buttonLable }}</span>
       </button>
     </div>
     <div class="wp-block-whitehouse-header__administration">
@@ -44,22 +65,6 @@ const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
       box-shadow: inset -1px 0 0 var(--wh-header--border-color);
     }
 
-    span {
-      display: none;
-      font-family: var(--wp--custom--typography--heading-6--font-family);
-      font-size: var(--wp--custom--typography--heading-6--font-size);
-      font-weight: var(--wp--custom--typography--heading-6--font-weight);
-      left: calc(50% + 26px);
-      letter-spacing: var(--wp--custom--typography--heading-6--letter-spacing);
-      line-height: var(--wp--custom--typography--heading-6--line-height);
-      position: absolute;
-      text-transform: var(--wp--custom--typography--heading-6--text-transform);
-      text-transform: none;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: opacity 0.25s ease-in-out;
-    }
-
     .wp-block-whitehouse-header__menu-toggle--button {
       color: var(--wh-header--color);
       display: flex;
@@ -69,6 +74,30 @@ const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
       position: relative;
       text-transform: none;
       z-index: 10001;
+
+      .wp-block-whitehouse-header__menu-toggle--close {
+        display: none;
+      }
+
+      span {
+        display: none;
+        font-family: var(--wp--custom--typography--heading-6--font-family);
+        font-size: var(--wp--custom--typography--heading-6--font-size);
+        font-weight: var(--wp--custom--typography--heading-6--font-weight);
+        left: calc(50% + 26px);
+        letter-spacing: var(
+          --wp--custom--typography--heading-6--letter-spacing
+        );
+        line-height: var(--wp--custom--typography--heading-6--line-height);
+        position: absolute;
+        text-transform: var(
+          --wp--custom--typography--heading-6--text-transform
+        );
+        text-transform: none;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.25s ease-in-out;
+      }
     }
   }
 
@@ -99,6 +128,29 @@ const { isOutside: targetMenuToggleButtonIsOutside } = useMouseInElement(
       -moz-user-select: none;
       user-select: none;
       white-space: nowrap;
+    }
+  }
+}
+</style>
+
+<style lang="scss">
+// 提升权重
+:root:root:root {
+  .has-popover-open--menu {
+    .wp-block-whitehouse-header__menu-toggle--open {
+      display: none;
+    }
+    .wp-block-whitehouse-header__menu-toggle--close {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 782px) {
+    .has-popover-open .wp-block-whitehouse-header__menu-toggle span {
+      animation: popover-action-label-animation 0.25s ease-in-out 0.25s forwards;
+      animation-iteration-count: 1;
+      display: block;
+      opacity: 0;
     }
   }
 }

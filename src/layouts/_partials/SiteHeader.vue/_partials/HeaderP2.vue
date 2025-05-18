@@ -2,16 +2,41 @@
 import { whitehouseLogo } from '~/config'
 import IconMenuToggleClose from './IconMenuToggleClose.vue'
 import IconSearchIcon from './IconSearchIcon.vue'
+
+const popoverStore = usePopoverStore()
+const toggleSearch = () => {
+  if (popoverStore.popoverState === 'search') {
+    popoverStore.setPopoverClose()
+  } else if (popoverStore.popoverState === 'close') {
+    popoverStore.setPopoverSearch()
+  } else if (popoverStore.popoverState === 'menu') {
+    popoverStore.setPopoverSearch()
+  }
+}
+
+const buttonLable = computed(() => {
+  if (popoverStore.popoverState === 'search') {
+    return 'Close'
+  }
+  return 'Search'
+})
 </script>
 
 <template>
   <div class="wp-block-whitehouse-header__p2">
     <div class="wp-block-whitehouse-header__search">
-      <div class="button-icon wp-block-whitehouse-header__search--button">
-        <span>Search</span>
-        <IconSearchIcon v-show="true"></IconSearchIcon>
-        <IconMenuToggleClose v-show="false"></IconMenuToggleClose>
-      </div>
+      <button
+        class="button-icon wp-block-whitehouse-header__search--button"
+        @click="toggleSearch"
+      >
+        <span>{{ buttonLable }}</span>
+        <IconSearchIcon
+          class="wp-block-whitehouse-header__search-icon--open"
+        ></IconSearchIcon>
+        <IconMenuToggleClose
+          class="wp-block-whitehouse-header__search-icon--close"
+        ></IconMenuToggleClose>
+      </button>
     </div>
     <div class="wp-block-whitehouse-header__logo">
       <a href="/" rel="home" title="The White House">
@@ -76,6 +101,10 @@ import IconSearchIcon from './IconSearchIcon.vue'
         transform: translateY(-50%);
         transition: opacity 0.25s ease-in-out;
       }
+
+      .wp-block-whitehouse-header__search-icon--close {
+        display: none;
+      }
     }
   }
 
@@ -100,6 +129,27 @@ import IconSearchIcon from './IconSearchIcon.vue'
         max-width: 100%;
         width: auto;
       }
+    }
+  }
+}
+</style>
+
+<style lang="scss">
+:root:root:root {
+  .has-popover-open--search {
+    .wp-block-whitehouse-header__search-icon--open {
+      display: none;
+    }
+    .wp-block-whitehouse-header__search-icon--close {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 782px) {
+    .has-popover-open .wp-block-whitehouse-header__search span {
+      animation: popover-action-label-animation 0.25s ease-in-out 0.25s forwards;
+      animation-iteration-count: 1;
+      display: block;
+      opacity: 0;
     }
   }
 }
