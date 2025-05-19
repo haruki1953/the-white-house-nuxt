@@ -13,12 +13,24 @@
   --wh-header--variation--logo--offset: var(--wp--preset--spacing--12);
 }
 
+:root {
+  --wh-header--sticky-start: -100%;
+  --wh-header--sticky-top: 0;
+  --wh--topper--color: var(--wh-header--color);
+  --wh--topper--background-color: var(--wh-header--background-color);
+  --wh-header--sticky--position: sticky;
+}
+
 @media screen and (min-width: 440px) {
   :root {
     --wh-header--wordmark--font-size: clamp(2rem, 0.6vw + 1.835rem, 2.375rem);
     --wh-header--wordmark--prefix--font-size: clamp(1.125rem, 0.3vw + 1.0425rem, 1.3125rem);
     --wh-header--logo--height: 2.0625rem;
   }
+  .has-sticky-header {
+    --wh-header--wordmark--prefix--font-size: 1.125rem;
+    --wh-header--wordmark--font-size: 2rem;
+}
 }
 
 @media screen and (max-width: 439px) {
@@ -27,11 +39,14 @@
     --wh-header--wordmark--prefix--font-size: clamp(0.8182rem, 4.09vw + 0rem, 1.125rem);
     --wh-header--logo--height: clamp(1.5rem, 7.5vw + 0rem, 2.0625rem);
   }
+  .has-sticky-header {
+    --wh-header--wordmark--prefix--font-size: clamp(0.8182rem, 4.09vw + 0rem, 1.125rem);
+    --wh-header--wordmark--font-size: clamp(1.4545rem, 7.27vw + 0rem, 2rem);
+}
 }
 
-/* ==============================
-   ## Style
-   ============================== */
+
+// ### Style Class
 .has-popover-open {
   height: 100%;
   margin: 0;

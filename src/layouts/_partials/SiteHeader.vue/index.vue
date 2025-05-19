@@ -2,7 +2,28 @@
 import HeaderP1 from './_partials/HeaderP1.vue'
 import HeaderWordmark from './_partials/HeaderWordmark.vue'
 import HeaderP2 from './_partials/HeaderP2.vue'
+import { useBodyPopover } from './_composables'
 
+// 控制body样式的逻辑已封装至此
+useBodyPopover()
+
+// 控制.has-sticky-header
+const scroll = useWindowScroll()
+const hasStickyHeader = computed(() => {
+  if (scroll.y.value > 250) {
+    return true
+  }
+  return false
+})
+onMounted(() => {
+  // 响应式控制body样式
+  watchEffect(() => {
+    const body = document.body
+    body.classList.toggle('has-sticky-header', hasStickyHeader.value)
+  })
+})
+
+// 控制header__popover.is-open
 const popoverStore = usePopoverStore()
 const isOpen = computed(() => {
   if (popoverStore.popoverState !== 'close') {
@@ -35,6 +56,14 @@ const isOpen = computed(() => {
 </template>
 <style lang="scss" scoped>
 .site-header {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin-block: 0;
+  position: relative;
+  top: var(--wh-header--sticky-start);
+  z-index: 10000;
+
   .wp-block-whitehouse-header {
     background-color: var(--wh-header--background-color);
     box-shadow: inset 0 -1px 0 var(--wh-header--border-color);
@@ -150,6 +179,19 @@ const isOpen = computed(() => {
     opacity: 1;
     transform: translateX(calc(var(--wh-scrollbar-width-max) / 2 * -1));
     visibility: visible;
+  }
+  .has-sticky-header {
+    .site-header {
+      @supports (position: sticky) {
+        animation-name: slideDown;
+        left: 0;
+        position: var(--wh-header--sticky--position);
+        right: 0;
+      }
+      .wp-block-whitehouse-header {
+        --wh-header--height: 50px;
+      }
+    }
   }
 }
 </style>

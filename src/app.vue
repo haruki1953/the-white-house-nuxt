@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { useBodyPopover } from './_composables'
-// 控制body样式的逻辑已封装至此
-useBodyPopover()
-</script>
-
 <template>
   <div class="app-body">
     <div class="wp-site-blocks">
