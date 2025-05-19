@@ -2,26 +2,12 @@
 import HeaderP1 from './_partials/HeaderP1.vue'
 import HeaderWordmark from './_partials/HeaderWordmark.vue'
 import HeaderP2 from './_partials/HeaderP2.vue'
-import { useBodyPopover } from './_composables'
+import { useBodyPopover, useHeaderSticky } from './_composables'
 
-// 控制body样式的逻辑已封装至此
+// 控制body.has-popover-open
 useBodyPopover()
-
-// 控制.has-sticky-header
-const scroll = useWindowScroll()
-const hasStickyHeader = computed(() => {
-  if (scroll.y.value > 250) {
-    return true
-  }
-  return false
-})
-onMounted(() => {
-  // 响应式控制body样式
-  watchEffect(() => {
-    const body = document.body
-    body.classList.toggle('has-sticky-header', hasStickyHeader.value)
-  })
-})
+// 控制body.has-sticky-header
+useHeaderSticky()
 
 // 控制header__popover.is-open
 const popoverStore = usePopoverStore()
