@@ -70,11 +70,13 @@
 
 body {
   /* min-height: 100vh; */
-  height: 100vh;
+  /* height: 100vh; */
+  overflow-x: hidden;
+  overflow-y: scroll;
   color: var(--color-text);
   background: var(--color-background);
   transition:
-    color 0.5s,
+    color 0.5s,vv
     background-color 0.5s;
   line-height: 1.6;
   font-family:
@@ -94,10 +96,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#__nuxt {
-  height: 100vh;
 }
 
 /* 窄滚动条 */

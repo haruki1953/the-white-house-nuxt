@@ -32,6 +32,13 @@
 /* ==============================
    ## Style
    ============================== */
+.has-popover-open {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding-right: var(--wh-scrollbar-width-max, 0);
+}
+
 .button-icon {
   align-items: center;
   -webkit-appearance: none;
