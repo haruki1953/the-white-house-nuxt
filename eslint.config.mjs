@@ -2,12 +2,29 @@
 import withNuxt from './.nuxt/eslint.config.mjs'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
+// pnpm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser
+// pnpm remove @typescript-eslint/eslint-plugin @typescript-eslint/parser
+// import eslintPluginTs from '@typescript-eslint/eslint-plugin'
+// import tsEslintParser from '@typescript-eslint/parser'
+import vueEslintParser from 'vue-eslint-parser'
 
 export default withNuxt([
   {
     plugins: {
       unicorn: eslintPluginUnicorn,
       prettier: eslintPluginPrettier
+      // '@typescript-eslint': eslintPluginTs
+    },
+    languageOptions: {
+      // @typescript-eslint/strict-boolean-expressions 所需
+      parser: vueEslintParser,
+      parserOptions: {
+        parser: '@typescript-eslint/parser', // vue-eslint-parser 转发给 ts 解析器
+        project: './tsconfig.json', // 必须指定 tsconfig.json 路径，开启类型信息
+        extraFileExtensions: ['.vue'],
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      }
     },
     rules: {
       // Standard 风格核心部分
@@ -24,6 +41,20 @@ export default withNuxt([
       eqeqeq: ['error', 'always', { null: 'ignore' }],
       // 不允许使用隐式类型转换，比如 !!foo、+foo
       'no-implicit-coercion': 'error',
+      // 避免非布尔值被 if 或 ! 语句使用
+      // 'no-implicit-coercion': ['error', { boolean: false }], （好像不生效）
+      // '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/strict-boolean-expressions': [
+        'error',
+        {
+          allowNullableBoolean: false,
+          allowString: false,
+          allowNumber: false,
+          allowNullableString: false,
+          allowNullableNumber: false,
+          allowAny: false
+        }
+      ],
       // 禁止不必要的布尔转换，比如 if (!!foo)
       'no-extra-boolean-cast': 'error',
       // 禁用 alert、confirm、prompt（在生产代码中一般不建议使用）
@@ -77,6 +108,7 @@ export default withNuxt([
       'vue/attribute-hyphenation': ['warn', 'never'],
       'vue/html-self-closing': 'off',
 
+      // 未使用值警告
       '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_' }]
     }
   }

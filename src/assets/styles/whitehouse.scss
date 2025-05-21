@@ -27,10 +27,11 @@
     --wh-header--wordmark--prefix--font-size: clamp(1.125rem, 0.3vw + 1.0425rem, 1.3125rem);
     --wh-header--logo--height: 2.0625rem;
   }
+
   .has-sticky-header {
     --wh-header--wordmark--prefix--font-size: 1.125rem;
     --wh-header--wordmark--font-size: 2rem;
-}
+  }
 }
 
 @media screen and (max-width: 439px) {
@@ -39,10 +40,11 @@
     --wh-header--wordmark--prefix--font-size: clamp(0.8182rem, 4.09vw + 0rem, 1.125rem);
     --wh-header--logo--height: clamp(1.5rem, 7.5vw + 0rem, 2.0625rem);
   }
+
   .has-sticky-header {
     --wh-header--wordmark--prefix--font-size: clamp(0.8182rem, 4.09vw + 0rem, 1.125rem);
     --wh-header--wordmark--font-size: clamp(1.4545rem, 7.27vw + 0rem, 2rem);
-}
+  }
 }
 
 
@@ -316,4 +318,8 @@ body {
   --wp--custom--typography--heading-6--text-transform: uppercase;
 }
 
-// WordPress END
+:root {
+  --wp--style--global--content-size: min(100%, 782px);
+  --wp--style--global--wide-size: min(100%, 1200px);
+  --wp--style--global--xlarge-size: min(100%, 1080px);
+}
