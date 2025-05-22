@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import MenuItemSubmenuIndicatorIcon from './MenuItemSubmenuIndicatorIcon.vue'
 
-defineProps<{
+const props = defineProps<{
   content: string
-  href: string
+  href?: string
+  level: 1 | 2
 }>()
 
-const linkRef = ref<ComponentPublicInstance | null>(null)
-const { isOutside: linkIsOutside } = useMouseInElement(linkRef)
+const popoverStore = usePopoverStore()
 
-const ulRef = ref<HTMLElement | null>(null)
-const { isOutside: ulIsOutside } = useMouseInElement(ulRef)
+const item = generateRandomKey()
+const setItemActive = () => {
+  if (isWidthLt782.value) {
+    return
+  }
+  popoverStore.setMenuItenActive(props.level, item, 'sub')
+}
 
 const { width } = useWindowSize()
 // 是否小屏状态 宽度小于782
@@ -20,19 +25,29 @@ const isWidthLt782 = computed(() => {
   }
   return false
 })
-// TODO
+
+// 小屏状态下的isActive控制
+// const xsIsActive = ref(false)
+const xsClick = (event: Event) => {
+  event.preventDefault() // 阻止默认行为
+  event.stopPropagation() // 阻止事件继续传播
+  if (!isWidthLt782.value) {
+    return
+  }
+  popoverStore.setMenuItenActive(props.level, item, 'sub')
+}
+const xsBack = () => {
+  if (!isWidthLt782.value) {
+    return
+  }
+  popoverStore.setMenuItenActive(props.level, null)
+}
 
 const isActive = computed(() => {
-  if (!linkIsOutside.value || !ulIsOutside.value) {
-    return true
-  }
-  return false
+  return popoverStore.isMenuItemActive(props.level, item)
 })
 const hasActive = computed(() => {
-  if (!ulIsOutside.value) {
-    return true
-  }
-  return false
+  return isActive.value && popoverStore.hasMenuItemActive(props.level + 1)
 })
 </script>
 
@@ -42,7 +57,12 @@ const hasActive = computed(() => {
       'is-active': isActive
     }"
   >
-    <NuxtLink ref="linkRef" :to="href">
+    <!-- 小屏时点击不跳转，因为要展开 -->
+    <NuxtLink
+      :to="isWidthLt782 ? undefined : href"
+      @mouseenter="setItemActive"
+      @click="xsClick"
+    >
       {{ content }}
       <span class="menu-item-submenu-indicator">
         <MenuItemSubmenuIndicatorIcon></MenuItemSubmenuIndicatorIcon>
@@ -55,7 +75,7 @@ const hasActive = computed(() => {
       }"
     >
       <li class="menu-item-back">
-        <a href="#">
+        <a href="javascript:;" @click="xsBack">
           Back
           <span class="menu-item-submenu-indicator">
             <MenuItemSubmenuIndicatorIcon></MenuItemSubmenuIndicatorIcon>

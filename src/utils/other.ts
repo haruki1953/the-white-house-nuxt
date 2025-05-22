@@ -17,3 +17,12 @@ export const utilGetScrollbarWidth = () => {
 
   return scrollbarWidth
 }
+
+// 生成随机密钥
+export const generateRandomKey = (length: number = 16) => {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  return Array.from(
+    { length },
+    () => chars[Math.floor(Math.random() * chars.length)]
+  ).join('')
+}

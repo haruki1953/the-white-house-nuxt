@@ -6,6 +6,7 @@ import { useBodyPopover, useHeaderSticky } from './_composables'
 import MenuItemSubmenuIndicatorIcon from './_partials/MenuItemSubmenuIndicatorIcon.vue'
 import MenuListItemHasChildren from './_partials/MenuListItemHasChildren.vue'
 import MenuListItem from './_partials/MenuListItem.vue'
+import MenuListItemSkeleton from './_partials/MenuListItemSkeleton.vue'
 
 // 控制body.has-popover-open
 useBodyPopover()
@@ -52,21 +53,62 @@ const isVisible = computed(() => {
             :class="{
               'is-visible': isVisible
             }"
-            data-submenu-level="1"
+            :data-submenu-level="popoverStore.menuSubLevel"
           >
             <div class="wp-block-whitehouse-header__popover--navigation">
               <ul class="wp-block-whitehouse-header__popover--menu--list menu">
-                <MenuListItem href="/" content="Home"></MenuListItem>
-                <MenuListItemHasChildren href="/news" content="News">
+                <MenuListItem :level="1" href="/" content="Home"></MenuListItem>
+                <MenuListItemHasChildren :level="1" href="/news" content="News">
                   <MenuListItem
+                    :level="2"
                     href="/articles"
                     content="Articles"
                   ></MenuListItem>
                   <MenuListItem
+                    :level="2"
+                    href="/articles"
+                    content="Articles"
+                  ></MenuListItem>
+                  <MenuListItemHasChildren
+                    :level="2"
+                    href="/news"
+                    content="News"
+                  >
+                    <MenuListItem
+                      :level="3"
+                      href="/articles"
+                      content="Articles"
+                    ></MenuListItem>
+                    <MenuListItem
+                      :level="3"
+                      href="/articles"
+                      content="Articles"
+                    ></MenuListItem>
+                  </MenuListItemHasChildren>
+                </MenuListItemHasChildren>
+                <MenuListItemHasChildren :level="1" href="/news" content="News">
+                  <MenuListItem
+                    :level="2"
+                    href="/articles"
+                    content="Articles"
+                  ></MenuListItem>
+                  <MenuListItem
+                    :level="2"
+                    href="/articles"
+                    content="Articles"
+                  ></MenuListItem>
+                  <MenuListItem
+                    :level="2"
+                    href="/articles"
+                    content="Articles"
+                  ></MenuListItem>
+                  <MenuListItem
+                    :level="2"
                     href="/presidential-actions"
                     content="Presidential Actions"
                   ></MenuListItem>
                 </MenuListItemHasChildren>
+                <MenuListItemSkeleton></MenuListItemSkeleton>
                 <!-- <li class="is-active">
                   <NuxtLink to="/news">
                     News
@@ -381,6 +423,9 @@ const isVisible = computed(() => {
   @media screen and (max-width: 781px) {
     [data-submenu-level='1'] .wp-block-whitehouse-header__popover--menu--list {
       transform: translateX(-100%);
+    }
+    [data-submenu-level='2'] .wp-block-whitehouse-header__popover--menu--list {
+      transform: translateX(-200%);
     }
   }
   .has-popover-open .wp-block-whitehouse-header__popover--inner {
