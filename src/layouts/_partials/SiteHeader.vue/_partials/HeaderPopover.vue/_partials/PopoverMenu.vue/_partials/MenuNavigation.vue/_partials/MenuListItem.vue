@@ -31,6 +31,7 @@ const isActive = computed(() => {
 
 <template>
   <li
+    class="menu-item"
     :class="{
       'is-active': isActive
     }"

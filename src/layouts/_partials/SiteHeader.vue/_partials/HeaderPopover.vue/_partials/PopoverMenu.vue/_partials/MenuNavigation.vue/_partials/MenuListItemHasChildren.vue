@@ -53,6 +53,7 @@ const hasActive = computed(() => {
 
 <template>
   <li
+    class="menu-item menu-item-has-children"
     :class="{
       'is-active': isActive
     }"

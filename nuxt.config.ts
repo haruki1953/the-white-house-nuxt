@@ -131,22 +131,22 @@ export default defineNuxtConfig({
           type: 'font/woff2',
           crossorigin: 'anonymous'
         },
-        // {
-        //   rel: 'stylesheet',
-        //   href: '/fontawesome-free-6.7.1-web/css/fontawesome.min.css'
-        // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: '/fontawesome-free-6.7.1-web/css/brands.min.css'
-        // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: '/fontawesome-free-6.7.1-web/css/solid.min.css'
-        // },
-        // {
-        //   rel: 'stylesheet',
-        //   href: '/fontawesome-free-6.7.1-web/css/regular.min.css'
-        // },
+        {
+          rel: 'stylesheet',
+          href: '/fontawesome-free-6.7.1-web/css/fontawesome.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/fontawesome-free-6.7.1-web/css/brands.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/fontawesome-free-6.7.1-web/css/solid.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: '/fontawesome-free-6.7.1-web/css/regular.min.css'
+        },
         // src\public\whitehouse-fonts-250515\css\all.css
         {
           rel: 'stylesheet',
