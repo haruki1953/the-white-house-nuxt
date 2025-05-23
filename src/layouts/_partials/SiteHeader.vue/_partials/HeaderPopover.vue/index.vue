@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PopoverMenu from './_partials/PopoverMenu.vue'
+import PopoverSearch from './_partials/PopoverSearch.vue'
 
 // 控制header__popover.is-open
 const popoverStore = usePopoverStore()
@@ -20,6 +21,7 @@ const isOpen = computed(() => {
   >
     <div class="wp-block-whitehouse-header__popover--inner">
       <PopoverMenu></PopoverMenu>
+      <PopoverSearch></PopoverSearch>
     </div>
   </div>
 </template>
