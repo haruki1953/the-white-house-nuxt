@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SiteFooter from './_partials/SiteFooter.vue'
 import SiteHeader from './_partials/SiteHeader.vue'
 </script>
 
@@ -6,6 +7,7 @@ import SiteHeader from './_partials/SiteHeader.vue'
   <div>
     <SiteHeader></SiteHeader>
     <slot />
+    <SiteFooter></SiteFooter>
   </div>
 </template>
 <style lang="scss" scoped></style>

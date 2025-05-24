@@ -11,7 +11,7 @@ const isVisible = computed(() => {
 </script>
 
 <template>
-  <search
+  <div
     class="wp-block-whitehouse-header__popover--search popover-context"
     :class="{
       'is-visible': isVisible
@@ -41,7 +41,7 @@ const isVisible = computed(() => {
         Press Enter to Search
       </button>
     </div>
-  </search>
+  </div>
 </template>
 
 <style lang="scss" scoped>

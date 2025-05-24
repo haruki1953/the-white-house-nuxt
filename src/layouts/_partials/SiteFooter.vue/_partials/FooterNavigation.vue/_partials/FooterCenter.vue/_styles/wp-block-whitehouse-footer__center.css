@@ -1,0 +1,283 @@
+/* // https://www.whitehouse.gov/_static/??/wp-content/themes/whitehouse/style.css,/wp-content/themes/whitehouse/assets/css/main.css?m=1747923218 */
+.wp-element-button {
+  cursor: pointer;
+}
+
+/* // （索引）:103 */
+:root :where(.wp-element-button, .wp-block-button__link) {
+  background-color: var(--wp--preset--color--pale-gray);
+  border-radius: 0px;
+  border-color: var(--wp--preset--color--pale-gray);
+  border-width: 2px;
+  border-style: solid;
+  color: var(--wp--preset--color--charcoal);
+  font-family: var(--wp--custom--typography--heading-6--font-family);
+  font-size: var(--wp--custom--typography--heading-6--font-size);
+  font-weight: var(--wp--custom--typography--heading-6--font-weight);
+  letter-spacing: var(--wp--custom--typography--heading-6--letter-spacing);
+  line-height: var(--wp--custom--typography--heading-6--line-height);
+  padding-top: var(--wp--preset--spacing--15);
+  padding-right: var(--wp--preset--spacing--20);
+  padding-bottom: var(--wp--preset--spacing--15);
+  padding-left: var(--wp--preset--spacing--20);
+  text-decoration: none;
+  text-transform: var(--wp--custom--typography--heading-6--text-transform);
+}
+
+/* // （索引）:100 */
+.wp-element-button {
+  transition: allow-discrete 0.125s ease-in-out 0s;
+}
+
+/* // （索引）:88 */
+.wp-block-whitehouse-newsletter__form {
+  align-self: center;
+  background: var(--wp--preset--color--white);
+  border: 2px solid var(--wp--preset--color--charcoal);
+  padding: var(--wp--preset--spacing--16);
+}
+
+.wp-block-whitehouse-newsletter__form:has(:focus) {
+  border-color: var(--wp--preset--color--navy-accent);
+}
+
+.wp-block-whitehouse-newsletter__form--fieldset {
+  align-items: center;
+  background: none;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 782px) {
+  .wp-block-whitehouse-newsletter__form--fieldset {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+  }
+}
+
+.wp-block-whitehouse-newsletter__form--field {
+  display: contents;
+}
+
+.wp-block-whitehouse-newsletter__form--field.honeypot {
+  border: 0;
+  display: block;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.wp-block-whitehouse-newsletter__form--field input[type='email'] {
+  border: none;
+  box-sizing: border-box;
+  font-family: var(--wp--custom--typography--heading-5--font-family);
+  font-size: var(--wp--custom--typography--heading-5--font-size);
+  font-weight: var(--wp--custom--typography--heading-5--font-weight);
+  height: 100%;
+  letter-spacing: var(--wp--custom--typography--heading-5--letter-spacing);
+  line-height: var(--wp--custom--typography--heading-5--line-height);
+  min-height: 54px;
+  outline: none;
+  padding: 0;
+  padding-inline: var(--wp--preset--spacing--16);
+  text-transform: var(--wp--custom--typography--heading-5--text-transform);
+  width: 100%;
+}
+
+.wp-block-whitehouse-newsletter__form--field input[type='email']::-moz-placeholder {
+  color: var(--wp--preset--color--charcoal);
+}
+
+.wp-block-whitehouse-newsletter__form--field input[type='email']::placeholder {
+  color: var(--wp--preset--color--charcoal);
+}
+
+.wp-block-whitehouse-newsletter__form--submit-wrapper {
+  display: contents;
+}
+
+.wp-block-whitehouse-newsletter__form--response {
+  display: none;
+  font-family: var(--wp--custom--typography--small--font-family);
+  font-size: var(--wp--custom--typography--small--font-size);
+  font-weight: var(--wp--custom--typography--small--font-weight);
+  letter-spacing: var(--wp--custom--typography--small--letter-spacing);
+  line-height: var(--wp--custom--typography--small--line-height);
+  text-transform: var(--wp--custom--typography--small--text-transform);
+}
+
+.wp-block-whitehouse-newsletter__form--response:not(:empty) {
+  display: block;
+  margin-block: var(--wp--preset--spacing--12);
+}
+
+.wp-block-whitehouse-newsletter__form--response.error {
+  color: var(--wp--preset--color--red);
+}
+
+/* // https://www.whitehouse.gov/wp-content/themes/whitehouse/blocks/footer/style-index.css?m=1746536952g */
+.wp-block-whitehouse-footer__center {
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 781px) {
+  .wp-block-whitehouse-footer__center {
+    order: -1;
+  }
+}
+
+@media screen and (min-width: 782px) and (max-width: 1199px) {
+  .wp-block-whitehouse-footer__center {
+    display: contents;
+  }
+}
+
+@media screen and (min-width: 440px) and (max-width: 781px) {
+  .has-secondary-footer-nav .wp-block-whitehouse-footer__center {
+    grid-column: 1/-1;
+  }
+}
+
+.wp-block-whitehouse-footer__center--figure {
+  display: grid;
+  margin: 0;
+  place-items: center;
+}
+
+.wp-block-whitehouse-footer__center--figure-link {
+  display: grid;
+  place-items: center;
+}
+
+.wp-block-whitehouse-footer__center--figure * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wp-block-whitehouse-footer__center picture {
+  display: contents;
+}
+
+.wp-block-whitehouse-footer__center img {
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  width: 182px;
+}
+
+@media screen and (max-width: 781px) {
+  .wp-block-whitehouse-footer__center img {
+    max-width: 80%;
+    width: 254px;
+  }
+}
+
+.wp-block-whitehouse-footer__center--newsletter {
+  margin-block-end: var(--wh-footer-navigation-row-gap);
+  width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .wp-block-whitehouse-footer__center--newsletter {
+    margin-block-start: var(--wp--preset--spacing--20);
+  }
+}
+
+@media screen and (min-width: 782px) and (max-width: 1199px) {
+  .wp-block-whitehouse-footer__center--newsletter {
+    grid-column: 1/-1;
+    grid-row: 2;
+    margin-block: 0;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .wp-block-whitehouse-footer__center--newsletter {
+    order: -1;
+  }
+}
+
+.wp-block-whitehouse-footer__center--newsletter-heading {
+  font-family: var(--wp--custom--typography--heading-4--font-family);
+  font-size: var(--wp--custom--typography--heading-4--font-size);
+  font-weight: var(--wp--custom--typography--heading-4--font-weight);
+  letter-spacing: var(--wp--custom--typography--heading-4--letter-spacing);
+  line-height: var(--wp--custom--typography--heading-4--line-height);
+  margin-block: 0 0.5em;
+  text-align: center;
+  text-transform: var(--wp--custom--typography--heading-4--text-transform);
+  text-wrap: auto;
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form {
+  align-self: auto;
+  background-color: hsla(from var(--wp--preset--color--pale-gray) h s l/.04);
+  border: 1px solid hsla(from var(--wp--preset--color--pale-gray) h s l/.16);
+  padding: 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form {
+    margin-inline: auto;
+    max-width: 100%;
+    width: 460px;
+  }
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form--fieldset {
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form--response {
+  text-align: center;
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='email'] {
+  background: transparent;
+  color: var(--wp--preset--color--white);
+  min-height: 36px;
+}
+
+@media screen and (min-width: 782px) {
+  .wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='email'] {
+    min-height: 44px;
+  }
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='email']::-moz-placeholder {
+  color: var(--wp--preset--color--pale-gray);
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='email']::placeholder {
+  color: var(--wp--preset--color--pale-gray);
+}
+
+.wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='submit'] {
+  align-items: center;
+  color: var(--wp--preset--color--charcoal);
+  display: flex;
+  height: 100%;
+  line-height: 1;
+  padding-block: 0;
+}
+
+@media screen and (max-width: 439px) {
+  .wp-block-whitehouse-footer__center--newsletter .wp-block-whitehouse-newsletter__form input[type='submit'] {
+    padding-inline: var(--wp--preset--spacing--16);
+  }
+}

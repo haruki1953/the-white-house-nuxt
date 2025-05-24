@@ -1,0 +1,308 @@
+/* （索引）:100 */
+.screen-reader-text {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/* （索引）:54 */
+.wp-block-social-link {
+  background: none !important;
+  color: inherit !important;
+}
+
+.wp-block-social-link-anchor {
+  padding: 0 !important;
+}
+
+.wp-block-social-link:focus,
+.wp-block-social-link:hover {
+  transform: none !important;
+}
+
+/* https://www.whitehouse.gov/wp-includes/blocks/social-links/style.min.css?m=1746040294g */
+.wp-block-social-links {
+  background: none;
+  box-sizing: border-box;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-indent: 0;
+}
+
+.wp-block-social-links .wp-social-link a,
+.wp-block-social-links .wp-social-link a:hover {
+  border-bottom: 0;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.wp-block-social-links .wp-social-link svg {
+  height: 1em;
+  width: 1em;
+}
+/* 图标从svg换为i */
+.wp-block-social-links .wp-social-link i {
+  height: 1em;
+  width: 1em;
+}
+
+.wp-block-social-links .wp-social-link span:not(.screen-reader-text) {
+  font-size: 0.65em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.wp-block-social-links.has-small-icon-size {
+  font-size: 16px;
+}
+
+.wp-block-social-links,
+.wp-block-social-links.has-normal-icon-size {
+  font-size: 24px;
+}
+
+.wp-block-social-links.has-large-icon-size {
+  font-size: 36px;
+}
+
+.wp-block-social-links.has-huge-icon-size {
+  font-size: 48px;
+}
+
+.wp-block-social-links.aligncenter {
+  display: flex;
+  justify-content: center;
+}
+
+.wp-block-social-links.alignright {
+  justify-content: flex-end;
+}
+
+.wp-block-social-link {
+  border-radius: 9999px;
+  display: block;
+  height: auto;
+}
+
+@media not (prefers-reduced-motion) {
+  .wp-block-social-link {
+    transition: transform 0.1s ease;
+  }
+}
+
+.wp-block-social-link a {
+  align-items: center;
+  display: flex;
+  line-height: 0;
+}
+
+.wp-block-social-link:hover {
+  transform: scale(1.1);
+}
+
+.wp-block-social-links .wp-block-social-link.wp-social-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor,
+.wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor
+  svg,
+  /* 图标从svg换为i */
+  .wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor
+  i,
+.wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor:active,
+.wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor:hover,
+.wp-block-social-links
+  .wp-block-social-link.wp-social-link
+  .wp-block-social-link-anchor:visited {
+  color: currentColor;
+  fill: currentColor;
+}
+
+/* （索引）:103 */
+body .is-layout-flex {
+  display: flex;
+}
+.is-layout-flex {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+:root :where(.is-layout-flex) {
+  gap: var(--wp--custom--style--block-gap);
+}
+
+/* https://www.whitehouse.gov/_static/??/wp-content/themes/whitehouse/style.css,/wp-content/themes/whitehouse/assets/css/main.css?m=1747923218 */
+address {
+  font-style: normal;
+  margin-block: 0;
+}
+
+/* https://www.whitehouse.gov/wp-content/themes/whitehouse/blocks/footer/style-index.css?m=1746536952g */
+.wp-block-whitehouse-footer__info {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 782px) {
+  .wp-block-whitehouse-footer__info {
+    display: block;
+    justify-content: unset;
+    margin-inline-start: auto;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .wp-block-whitehouse-footer__info {
+    order: 2;
+  }
+}
+
+@media screen and (min-width: 440px) and (max-width: 781px) {
+  .has-secondary-footer-nav .wp-block-whitehouse-footer__info {
+    grid-column: 1/-1;
+  }
+}
+
+.wp-block-whitehouse-footer__info address {
+  font-family: var(--wp--custom--typography--small--font-family);
+  font-size: var(--wp--custom--typography--small--font-size);
+  font-weight: var(--wp--custom--typography--small--font-weight);
+  letter-spacing: var(--wp--custom--typography--small--letter-spacing);
+  line-height: var(--wp--custom--typography--small--line-height);
+  text-transform: var(--wp--custom--typography--small--text-transform);
+}
+
+.wp-block-whitehouse-footer__info address span {
+  display: block;
+  font-family: var(--wp--custom--typography--font-family--serif);
+  font-size: var(--wp-footer--info--wordmark--font-size);
+  margin-block-end: var(--wp--preset--spacing--12);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 439px) {
+  .wp-block-whitehouse-footer__info address span {
+    --wp-footer--info--wordmark--font-size: clamp(
+      1.0909rem,
+      5.45vw + 0rem,
+      1.5rem
+    );
+  }
+}
+
+@media screen and (min-width: 440px) {
+  .wp-block-whitehouse-footer__info address span {
+    --wp-footer--info--wordmark--font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wp-block-whitehouse-footer__info address span {
+    --wp-footer--info--wordmark--font-size: clamp(
+      1.5rem,
+      0.83vw + 0.75rem,
+      1.75rem
+    );
+  }
+}
+
+.wp-block-whitehouse-footer__info--social-links {
+  --wh-footer-social-links-gap: 12px;
+  --wh-footer-social-links-color: var(--wp--preset--color--pale-gray);
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 1;
+  margin-block: var(--wp--preset--spacing--32) 0;
+}
+
+@media screen and (max-width: 439px) {
+  .wp-block-whitehouse-footer__info--social-links {
+    --wh-footer-social-links-size: clamp(0.9091rem, 4.55vw + 0rem, 1.25rem);
+  }
+}
+
+@media screen and (min-width: 440px) {
+  .wp-block-whitehouse-footer__info--social-links {
+    --wh-footer-social-links-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wp-block-whitehouse-footer__info--social-links {
+    --wh-footer-social-links-size: clamp(1.25rem, 0.69vw + 0.625rem, 1.4583rem);
+  }
+}
+
+@media screen and (min-width: 782px) {
+  .wp-block-whitehouse-footer__info--social-links {
+    justify-content: end;
+    margin-block: var(--wp--preset--spacing--24);
+  }
+}
+
+.wp-block-whitehouse-footer__info--social-links a {
+  display: grid;
+  height: var(--wh-footer-social-links-size);
+  min-height: var(--wh-footer-social-links-size);
+  min-width: var(--wh-footer-social-links-size);
+  padding: 0 var(--wh-footer-social-links-gap) !important;
+  place-items: center;
+  transition: allow-discrete 0.125s ease-in-out 0s;
+  width: var(--wh-footer-social-links-size);
+}
+
+.wp-block-whitehouse-footer__info--social-links:has(a:hover) a:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.wp-block-whitehouse-footer__info--social-links .wp-block-social-links {
+  gap: 0;
+  margin-inline: calc(var(--wh-footer-social-links-gap) * -1);
+}
+
+.wp-block-whitehouse-footer__info--social-links .wp-block-social-link svg {
+  color: var(--wh-footer-social-links-color);
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+  fill: currentcolor;
+}
+/* 图标从svg换为i */
+.wp-block-whitehouse-footer__info--social-links .wp-block-social-link i {
+  color: var(--wh-footer-social-links-color);
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+  fill: currentcolor;
+}
