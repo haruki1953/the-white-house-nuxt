@@ -1,4 +1,4 @@
-# WhiteHouse
+# WhiteHouse-Nuxt
 
 ![harukidemo](./src/assets/img/harukidemo.png)
 
