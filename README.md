@@ -1,4 +1,6 @@
-# Nuxt Minimal Starter
+# WhiteHouse
+
+![harukidemo](./src/assets/img/harukidemo.png)
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
